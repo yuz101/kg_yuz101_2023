@@ -1,27 +1,14 @@
-// function convertToString(myArray){
-//     let s_arr = []
-//     let digit_str = ['Zero', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine'];
-//     console.log(myArray)
-//     for (let i = 0; i < myArray.length; i++){
-//         let currNum = myArray[i]
-//         while(currNum > 0){
-//             let digit = currNum % 10
-//             currNum = currNum / 10
-//             s_arr.push(digit_str[digit])
-//         }
-//     }
-//     console.log(s_arr)
-// }
-var myArgs = process.argv;
+var myArgs = process.argv.slice(2);
 let s_arr = []
 let digit_str = ['Zero', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine'];
 for (let i = 0; i < myArgs.length; i++){
-    let currNum = myArgs[i]
+    let currNum = parseInt(myArgs[i])
+    let num_str = ""
     while(currNum > 0){
         let digit = currNum % 10
         currNum = Math.floor(currNum / 10)
-        s_arr.push(digit_str[digit])
+        num_str = digit_str[digit] + num_str
     }
-    
+    s_arr.push(num_str)
 }
-console.log(s_arr)
+console.log(s_arr.join())
