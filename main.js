@@ -12,4 +12,4 @@ for (let i = 0; i < myArgs.length; i++){
     s_arr.push(num_str)
     
 }
-console.log(s_arr)
+console.log(s_arr.join())
